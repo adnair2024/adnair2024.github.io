@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Three.js animated background canvas -->
+  <canvas id="bg"></canvas>
+
+  <div id="page">
+    <nav class="nav">
+      <div class="brand">
+        <a href="./">Your Name</a>
+      </div>
+      <div class="nav-right">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="github" href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <h1>Hi — I'm <span class="accent">Your Name</span></h1>
+        <p class="lead">I build stuff with JavaScript, Three.js & web APIs.</p>
+        <div class="actions">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn ghost" href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener">My GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section id="projects" class="section">
+        <h2>Latest projects</h2>
+        <p class="muted">Automatically fetched from GitHub (most recently updated first)</p>
+        <div id="project-list" class="project-grid">
+          <!-- Project cards inserted here by script.js -->
+        </div>
+        <div id="projects-error" class="error" hidden></div>
+      </section>
+
+      <section id="about" class="section about">
+        <h2>About</h2>
+        <p>
+          I'm a web developer who likes interactive experiences, WebGL and small, performant UIs.
+        </p>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p>Find me on <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener">GitHub</a> or email <code>your@email.com</code></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>© <span id="year"></span> Your Name • Built with Three.js • Hosted on GitHub Pages</small>
+    </footer>
+  </div>
+
+  <!-- Config must load before script.js -->
+  <script type="module" src="config.js"></script>
+  <script type="module" src="three_background.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
+
