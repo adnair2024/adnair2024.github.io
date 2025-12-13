@@ -50,8 +50,8 @@ const PARAMS = {
   q: 3,
   scale: 1.8,
   rotationSpeed: 0.18,    // overall rotation speed
-  colorA: new THREE.Color(0x76fbd1), // gradient top-ish color
-  colorB: new THREE.Color(0x3a7bd5), // gradient bottom-ish color
+  colorA: new THREE.Color(0xffa500), // gradient top-ish color
+  colorB: new THREE.Color(0xff8c00), // gradient bottom-ish color
 };
 
 // Geometry (torus knot)
@@ -110,8 +110,8 @@ const duplicate = knot.clone();
 duplicate.scale.setScalar(PARAMS.scale * 0.985);
 duplicate.material = material.clone();
 duplicate.material.uniforms = material.uniforms;
-duplicate.material.uniforms.uColorA.value = new THREE.Color(0x9be7ff);
-duplicate.material.uniforms.uColorB.value = new THREE.Color(0x6a79ff);
+duplicate.material.uniforms.uColorA.value = new THREE.Color(0xffd700);
+duplicate.material.uniforms.uColorB.value = new THREE.Color(0xffa07a);
 duplicate.material.transparent = true;
 duplicate.material.opacity = 0.7;
 scene.add(duplicate);
