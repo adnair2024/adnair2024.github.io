@@ -59,16 +59,21 @@ h1{font-size:3rem;margin:0 0 10px}
 
 /* GitHub Calendar Styling */
 .github-heatmap {
-  margin-top: 40px;
-  max-width: 900px; /* Adjust as needed */
+  margin-top: 60px; /* Increased margin to lower the graph */
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
-  overflow-x: auto; /* Enable horizontal scrolling on small screens if necessary */
+  overflow-x: auto;
   padding: 15px;
   background: var(--card);
   border-radius: var(--radius);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide the "skip to contributions year list" element if present */
+.calendar .sr-only {
+  display: none !important;
 }
 
 .calendar {
