@@ -29,6 +29,16 @@ h1{font-size:3rem;margin:0 0 10px}
 .lead{color:var(--muted);margin:0 0 20px}
 .accent{color:var(--accent)}
 
+.github-heatmap{
+  text-align: center;
+  margin: 20px 0; /* Add some vertical spacing */
+}
+.github-heatmap img{
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto;
+  border-radius: var(--radius); /* Match other elements' styling */
+}
+
 .actions{margin-top:18px}
 .btn{display:inline-block;padding:10px 16px;margin-right:10px;border-radius:10px;text-decoration:none;background:linear-gradient(90deg,#1f2937,#111827);color:white}
 .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
