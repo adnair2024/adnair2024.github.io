@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Ash's Blog</title><link>https://adnair2024.github.io/blog/post/</link><description>Recent Posts in Posts on Ash's Blog</description><generator>Hugo 0.153.1</generator><language>en-us</language><lastBuildDate>Sun, 21 Dec 2025 14:37:22 +0000</lastBuildDate><atom:link href="https://adnair2024.github.io/blog/post/index.xml" rel="self" type="application/rss+xml"/><item><title>my-markdown</title><link>https://adnair2024.github.io/blog/post/my-markdown/</link><pubDate>Sun, 21 Dec 2025 07:56:44 -0600</pubDate><guid>https://adnair2024.github.io/blog/post/my-markdown/</guid><description>&lt;h3 id="my-relationship-with-markdown"&gt;My relationship with markdown&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Ash's Blog</title><link>https://adnair2024.github.io/blog/post/</link><description>Recent Posts in Posts on Ash's Blog</description><generator>Hugo 0.153.1</generator><language>en-us</language><lastBuildDate>Sun, 21 Dec 2025 14:57:55 +0000</lastBuildDate><atom:link href="https://adnair2024.github.io/blog/post/index.xml" rel="self" type="application/rss+xml"/><item><title>my-markdown</title><link>https://adnair2024.github.io/blog/post/my-markdown/</link><pubDate>Sun, 21 Dec 2025 07:56:44 -0600</pubDate><guid>https://adnair2024.github.io/blog/post/my-markdown/</guid><description>&lt;h3 id="my-relationship-with-markdown"&gt;My relationship with markdown&lt;/h3&gt;
 &lt;p&gt;I use markdown every single day. It&amp;rsquo;s become an essential part of my workflow,
 and this started with note taking apps like Obsidian and Ulysses. When I found
 Neovim, everything changed. I started just making todo lists in markdown, within
@@ -30,7 +30,9 @@ quickly with a single key bind, so they don&amp;rsquo;t have to manually go and 
 checkbox every time. The plugin automatically detects the checkbox as long as
 your cursor is on the same line as the checkbox, and it will go and cycle through
 the states. Below is the rotation of the states in the order that the plugin
-handles them.&lt;/p&gt;
+handles them. To neatly render them, I use &lt;a href="https://github.com/MeanderingProgrammer/render-markdown.nvim" target="_blank" rel="external noopener noreferrer nofollow"&gt;&lt;code&gt;render-markdown&lt;/code&gt;&lt;/a&gt;, a neovim plugin
+that uses icons and makes them visually appealing. It also renders tables, and
+headings, so I recommend checking it out.&lt;/p&gt;
 &lt;table&gt;
  &lt;thead&gt;
  &lt;tr&gt;
