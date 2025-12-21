@@ -137,3 +137,16 @@ h1{font-size:3rem;margin:0 0 10px}
   display: block;
 }
 
+/* More aggressive rules to hide "skip to contributions year list" */
+.calendar a[href*="#year-"] { /* Targets links pointing to year anchors */
+  display: none !important;
+}
+
+.calendar [aria-label*="Skip to"] { /* Targets elements with aria-label containing "Skip to" */
+  display: none !important;
+}
+
+.calendar .contrib-footer .float-left a { /* Sometimes it's in a footer-like element */
+  display: none !important;
+}
+
