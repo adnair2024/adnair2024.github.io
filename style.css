@@ -56,3 +56,79 @@ h1{font-size:3rem;margin:0 0 10px}
   h1{font-size:2.2rem}
   .nav{padding:12px}
 }
+
+/* GitHub Calendar Styling */
+.github-heatmap {
+  margin-top: 40px;
+  max-width: 900px; /* Adjust as needed */
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto; /* Enable horizontal scrolling on small screens if necessary */
+  padding: 15px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+}
+
+.calendar {
+  font-family: inherit;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.calendar svg.calendar-graph {
+  max-width: 100%; /* Ensure SVG scales within its container */
+  height: auto;
+}
+
+.calendar-graph .day {
+  fill: #161b22; /* Default background for no contributions */
+}
+
+/* Custom colors for contribution levels */
+/* These map to the default 5 levels of contributions */
+.calendar-graph .contrib-cell[data-level="0"] { fill: #161b22; } /* No contributions */
+.calendar-graph .contrib-cell[data-level="1"] { fill: #0e4429; } /* Low contributions - Darker green */
+.calendar-graph .contrib-cell[data-level="2"] { fill: #006d32; } /* Medium contributions - Green */
+.calendar-graph .contrib-cell[data-level="3"] { fill: #26a641; } /* High contributions - Brighter green */
+.calendar-graph .contrib-cell[data-level="4"] { fill: #39d353; } /* Very high contributions - Brightest green */
+
+
+.calendar-graph text.month-name,
+.calendar-graph text.wday {
+  fill: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* Tooltip for contribution details */
+.tip {
+  color: var(--bg); /* Dark background for tooltip text */
+  background-color: var(--accent); /* Accent color for tooltip background */
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  pointer-events: none;
+  position: absolute;
+  z-index: 10;
+  transform: translateX(-50%);
+  display: none; /* Hidden by default */
+}
+
+.tip::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--accent) transparent transparent transparent;
+  transform: translateX(-50%);
+}
+
+/* Show tooltip on hover over day cell */
+.calendar-graph .day:hover + .tip {
+  display: block;
+}
+
