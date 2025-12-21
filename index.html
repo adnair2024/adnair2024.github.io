@@ -5,71 +5,77 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>ADN — Portfolio</title>
   <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <!-- Three.js animated background canvas -->
-  <canvas id="bg"></canvas>
-
-  <div id="page">
-    <nav class="nav">
-      <div class="brand">
-        <a href="./">ADN</a>
-      </div>
-      <div class="nav-right">
-        <a href="https://adnair2024.github.io/blog/">Blog</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </nav>
-
-    <header class="hero">
-      <div class="hero-inner">
-        <h1>Hi — I'm <span class="accent">Ashwin Nair</span></h1>
-        <p class="lead">I build stuff with Python & web APIs.</p>
-        <div class="github-heatmap">
-          <img src="https://raw.githubusercontent.com/ishaan0102/github-contributions-svg/master/github-contributions.svg?user=adnair2024" alt="Ashwin Nair's GitHub Contributions" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Github Calendar Library -->
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  </head>
+  <body>
+    <!-- Three.js animated background canvas -->
+    <canvas id="bg"></canvas>
+  
+    <div id="page">
+      <nav class="nav">
+        <div class="brand">
+          <a href="./">ADN</a>
         </div>
-        <div class="actions">
-          <a class="btn" href="#projects">See projects</a>
-          <a class="btn ghost" href="https://github.com/adnair2024" target="_blank" rel="noopener">My GitHub</a>
+        <div class="nav-right">
+          <a href="https://adnair2024.github.io/blog/">Blog</a>
+          <a href="#projects">Projects</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </div>
-      </div>
-    </header>
-
-    <main class="main">
-      <section id="projects" class="section">
-        <h2>Stuff I'm currently working on</h2>
-        <p class="muted">Automatically fetched from GitHub (most recently updated first)</p>
-        <div id="project-list" class="project-grid">
-          <!-- Project cards inserted here by script.js -->
+      </nav>
+  
+      <header class="hero">
+        <div class="hero-inner">
+          <h1>Hi — I'm <span class="accent">Ashwin Nair</span></h1>
+          <p class="lead">I build stuff with Python & web APIs.</p>
+          <div class="actions">
+            <a class="btn" href="#projects">See projects</a>
+            <a class="btn ghost" href="https://github.com/adnair2024" target="_blank" rel="noopener">My GitHub</a>
+          </div>
+          <div class="calendar github-heatmap">
+              Loading your GitHub contributions...
+          </div>
         </div>
-        <div id="projects-error" class="error" hidden></div>
-      </section>
-
-      <section id="about" class="section about">
-        <h2>About</h2>
-        <p>
-          I'm a web developer who likes interactive experiences, WebGL and small, performant UIs.
-        </p>
-      </section>
-
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Find me on <a href="https://github.com/adnair2024" target="_blank" rel="noopener">GitHub</a> or email <code>glocklord@proton.me</code></p>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <small>© <span id="year"></span> Ashwin Nair • Built with Three.js • Hosted on GitHub Pages</small>
-    </footer>
-  </div>
-
-  <!-- Config must load before script.js -->
-  <script type="module" src="config.js"></script>
-  <script type="module" src="three_background.js"></script>
-  <script type="module" src="script.js"></script>
-</body>
+      </header>
+  
+      <main class="main">
+        <section id="projects" class="section">
+          <h2>Stuff I'm currently working on</h2>
+          <p class="muted">Automatically fetched from GitHub (most recently updated first)</p>
+          <div id="project-list" class="project-grid">
+            <!-- Project cards inserted here by script.js -->
+          </div>
+          <div id="projects-error" class="error" hidden></div>
+        </section>
+  
+        <section id="about" class="section about">
+          <h2>About</h2>
+          <p>
+            I'm a web developer who likes interactive experiences, WebGL and small, performant UIs.
+          </p>
+        </section>
+  
+        <section id="contact" class="section">
+          <h2>Contact</h2>
+          <p>Find me on <a href="https://github.com/adnair2024" target="_blank" rel="noopener">GitHub</a> or email <code>glocklord@proton.me</code></p>
+        </section>
+      </main>
+  
+      <footer class="footer">
+        <small>© <span id="year"></span> Ashwin Nair • Built with Three.js • Hosted on GitHub Pages</small>
+      </footer>
+    </div>
+  
+    <!-- Config must load before script.js -->
+    <script type="module" src="config.js"></script>
+    <script type="module" src="three_background.js"></script>
+    <script type="module" src="script.js"></script>
+    <script>
+      GitHubCalendar(".calendar", "adnair2024", { responsive: true, global_stats: false });
+    </script>
+  </body>
 </html>
 
