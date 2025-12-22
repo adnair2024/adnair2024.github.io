@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Neovim on Ash's Blog</title><link>https://adnair2024.github.io/blog/tags/neovim.html</link><description>Recent Posts in Neovim on Ash's Blog</description><generator>Hugo 0.153.1</generator><language>en-us</language><lastBuildDate>Sun, 21 Dec 2025 16:43:01 +0000</lastBuildDate><atom:link href="https://adnair2024.github.io/blog/tags/neovim/index.xml" rel="self" type="application/rss+xml"/><item><title>my-markdown</title><link>https://adnair2024.github.io/blog/post/my-markdown.html</link><pubDate>Sun, 21 Dec 2025 07:56:44 -0600</pubDate><guid>https://adnair2024.github.io/blog/post/my-markdown.html</guid><description>&lt;h3 id="my-relationship-with-markdown"&gt;My relationship with markdown&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Neovim on Ash's Blog</title><link>https://adnair2024.github.io/blog/tags/neovim.html</link><description>Recent Posts in Neovim on Ash's Blog</description><generator>Hugo 0.153.1</generator><language>en-us</language><lastBuildDate>Mon, 22 Dec 2025 20:06:39 +0000</lastBuildDate><atom:link href="https://adnair2024.github.io/blog/tags/neovim/index.xml" rel="self" type="application/rss+xml"/><item><title>my-markdown</title><link>https://adnair2024.github.io/blog/post/my-markdown.html</link><pubDate>Sun, 21 Dec 2025 07:56:44 -0600</pubDate><guid>https://adnair2024.github.io/blog/post/my-markdown.html</guid><description>&lt;h3 id="my-relationship-with-markdown"&gt;My relationship with markdown&lt;/h3&gt;
 &lt;p&gt;I use markdown every single day. It&amp;rsquo;s become an essential part of my workflow,
 and this started with note taking apps like Obsidian and Ulysses. When I found
 Neovim, everything changed. I started just making todo lists in markdown, within
@@ -110,6 +110,9 @@ would be done without me ever leaving normal mode. To wrap it up, I abbreviated
 below can be copy and pasted to your plugin list.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-lua" data-lang="lua"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;{
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;adnair2024/mm&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; dependencies &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;MeanderingProgrammer/render-markdown.nvim&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; },
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; config &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt;()
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;local&lt;/span&gt; mm &lt;span style="color:#f92672"&gt;=&lt;/span&gt; require(&lt;span style="color:#e6db74"&gt;&amp;#39;mm&amp;#39;&lt;/span&gt;)
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; 
@@ -123,7 +126,8 @@ below can be copy and pasted to your plugin list.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The two mappings I have currently are for toggling through the cycles, and one
 for immediately setting it to pending, just for ease of use. The &lt;code&gt;desc&lt;/code&gt; is just
 to build a habit, and since I use &lt;code&gt;which-key.nvim&lt;/code&gt;, it automatically pops
-up when you hit your leader key.&lt;/p&gt;
+up when you hit your leader key. The only dependency we&amp;rsquo;re using is &lt;code&gt;render-markdown&lt;/code&gt;,
+to beautify our checkboxes.&lt;/p&gt;
 &lt;h3 id="wrapping-up"&gt;Wrapping up&lt;/h3&gt;
 &lt;p&gt;This plugin was about more than saving four keystrokes; it was also about creating
 a tool I could use many times a day rather than forcing my brain to get used to
