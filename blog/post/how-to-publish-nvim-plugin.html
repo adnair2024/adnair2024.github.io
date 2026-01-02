@@ -87,7 +87,8 @@ containing the table where your cursor is located.</li></ul></li></ul><div class
 </span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
 </span></span></code></pre></div><ul><li>Image and Link Wrappers<ul><li>Aim: Reduce time taken to create an image embed or hyperlink.</li><li>Logic: These wrappers use Lua&rsquo;s built-in string formatting to take two
 inputs (like description and URL) and drop the text block where your
-cursor is sitting.</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span>M.create_link <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>()
+cursor is sitting.</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#75715e>-- FUNCTION: URL Wrapper</span>
+</span></span><span style=display:flex><span>M.create_link <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>()
 </span></span><span style=display:flex><span>    vim.ui.input({ prompt <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;Display Text: &#34;</span> }, <span style=color:#66d9ef>function</span>(text)
 </span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> text <span style=color:#66d9ef>then</span> <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>end</span>
 </span></span><span style=display:flex><span>        vim.ui.input({ prompt <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;URL: &#34;</span> }, <span style=color:#66d9ef>function</span>(url)
@@ -113,7 +114,14 @@ cursor is sitting.</li></ul></li></ul><div class=highlight><pre tabindex=0 style
 <code>vim.api.nvim_put</code> function because it allows for more precise control over
 cursor placement and for undo-history compared to the usual &ldquo;append&rdquo; commands with
 respect to the current line state and indentation. This ensures that when a
-link or images are generated, it is added into the buffer with indentation and current line state kept in mind.</p><h3 id=dependencies-and-what-they-can-do-for-you>Dependencies and what they can do for you</h3><p>The best part about the Neovim community is that you&rsquo;ll never have to reinvent
+link or images are generated, it is added into the buffer with indentation and
+current line state kept in mind. Below, I&rsquo;ve added the <code>insert_text</code> function so
+you can understand how it works</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#66d9ef>local</span> <span style=color:#66d9ef>function</span> <span style=color:#a6e22e>insert_text</span>(text)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>local</span> row, col <span style=color:#f92672>=</span> unpack(vim.api.nvim_win_get_cursor(<span style=color:#ae81ff>0</span>))
+</span></span><span style=display:flex><span>    <span style=color:#75715e>-- row is 1-indexed for the cursor, but 0-indexed for the buffer API</span>
+</span></span><span style=display:flex><span>    vim.api.nvim_buf_set_text(<span style=color:#ae81ff>0</span>, row <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, col, row <span style=color:#f92672>-</span> <span style=color:#ae81ff>1</span>, col, {text})
+</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span></code></pre></div><h3 id=dependencies-and-what-they-can-do-for-you>Dependencies and what they can do for you</h3><p>The best part about the Neovim community is that you&rsquo;ll never have to reinvent
 the wheel. I use a plugin called <a href=https://github.com/MeanderingProgrammer/render-markdown.nvim target=_blank rel="external noopener noreferrer nofollow">render_markdown.nvim</a> to
 display the Markdown elements (links, tables, image links) within Neovim. This way,
 once <code>md_helper.nvim</code> creates the table, <code>render_markdown.nvim</code> makes it visually

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Ash's Blog</title><link>https://adnair2024.github.io/blog/post/index.html</link><description>Recent Posts in Posts on Ash's Blog</description><generator>Hugo 0.154.1</generator><language>en-us</language><lastBuildDate>Fri, 02 Jan 2026 15:49:08 +0000</lastBuildDate><atom:link href="https://adnair2024.github.io/blog/post/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Publish a Neovim Plugin</title><link>https://adnair2024.github.io/blog/post/how-to-publish-nvim-plugin.html</link><pubDate>Mon, 29 Dec 2025 10:51:04 -0600</pubDate><guid>https://adnair2024.github.io/blog/post/how-to-publish-nvim-plugin.html</guid><description>&lt;h2 id="turning-snippets-into-plugins-that-everyone-can-use"&gt;Turning snippets into plugins that everyone can use&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Ash's Blog</title><link>https://adnair2024.github.io/blog/post/index.html</link><description>Recent Posts in Posts on Ash's Blog</description><generator>Hugo 0.154.1</generator><language>en-us</language><lastBuildDate>Fri, 02 Jan 2026 15:52:32 +0000</lastBuildDate><atom:link href="https://adnair2024.github.io/blog/post/index.xml" rel="self" type="application/rss+xml"/><item><title>How to Publish a Neovim Plugin</title><link>https://adnair2024.github.io/blog/post/how-to-publish-nvim-plugin.html</link><pubDate>Mon, 29 Dec 2025 10:51:04 -0600</pubDate><guid>https://adnair2024.github.io/blog/post/how-to-publish-nvim-plugin.html</guid><description>&lt;h2 id="turning-snippets-into-plugins-that-everyone-can-use"&gt;Turning snippets into plugins that everyone can use&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="#turning-snippets-into-plugins-that-everyone-can-use"&gt;Table of Contents&lt;/a&gt;
 &lt;ul&gt;
@@ -151,7 +151,8 @@ cursor is sitting.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-lua" data-lang="lua"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;M.create_link &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt;()
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-lua" data-lang="lua"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;-- FUNCTION: URL Wrapper&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;M.create_link &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt;()
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; vim.ui.input({ prompt &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;Display Text: &amp;#34;&lt;/span&gt; }, &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt;(text)
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt; &lt;span style="color:#f92672"&gt;not&lt;/span&gt; text &lt;span style="color:#66d9ef"&gt;then&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; vim.ui.input({ prompt &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#34;URL: &amp;#34;&lt;/span&gt; }, &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt;(url)
@@ -177,8 +178,15 @@ cursor is sitting.&lt;/li&gt;
 &lt;code&gt;vim.api.nvim_put&lt;/code&gt; function because it allows for more precise control over
 cursor placement and for undo-history compared to the usual &amp;ldquo;append&amp;rdquo; commands with
 respect to the current line state and indentation. This ensures that when a
-link or images are generated, it is added into the buffer with indentation and current line state kept in mind.&lt;/p&gt;
-&lt;h3 id="dependencies-and-what-they-can-do-for-you"&gt;Dependencies and what they can do for you&lt;/h3&gt;
+link or images are generated, it is added into the buffer with indentation and
+current line state kept in mind. Below, I&amp;rsquo;ve added the &lt;code&gt;insert_text&lt;/code&gt; function so
+you can understand how it works&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-lua" data-lang="lua"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;local&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;function&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;insert_text&lt;/span&gt;(text)
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;local&lt;/span&gt; row, col &lt;span style="color:#f92672"&gt;=&lt;/span&gt; unpack(vim.api.nvim_win_get_cursor(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;-- row is 1-indexed for the cursor, but 0-indexed for the buffer API&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; vim.api.nvim_buf_set_text(&lt;span style="color:#ae81ff"&gt;0&lt;/span&gt;, row &lt;span style="color:#f92672"&gt;-&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, col, row &lt;span style="color:#f92672"&gt;-&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;, col, {text})
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;end&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="dependencies-and-what-they-can-do-for-you"&gt;Dependencies and what they can do for you&lt;/h3&gt;
 &lt;p&gt;The best part about the Neovim community is that you&amp;rsquo;ll never have to reinvent
 the wheel. I use a plugin called &lt;a href="https://github.com/MeanderingProgrammer/render-markdown.nvim" target="_blank" rel="external noopener noreferrer nofollow"&gt;render_markdown.nvim&lt;/a&gt; to
 display the Markdown elements (links, tables, image links) within Neovim. This way,
