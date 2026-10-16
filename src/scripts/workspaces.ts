@@ -65,6 +65,21 @@ function upgradeNavToButtons() {
   });
 }
 
+// The hero <h1> lives on the home workspace only. In script mode the other workspaces
+// are display:none until selected, so give each a visually hidden <h1> to keep exactly
+// one h1 in the accessibility tree on every view. (Static HTML keeps a single h1.)
+function addWorkspaceHeadings() {
+  const name = document.getElementById('name')?.querySelector('.name-real')?.textContent ?? '';
+  (['projects', 'blog'] as const).forEach((id) => {
+    const panel = document.getElementById(id);
+    if (!panel) return;
+    const h = document.createElement('h1');
+    h.className = 'sr-only';
+    h.textContent = `${name}: ${id}`;
+    panel.prepend(h);
+  });
+}
+
 export function initWorkspaces() {
   const root = document.getElementById('workspaces');
   announce = document.getElementById('ws-announce');
@@ -78,6 +93,7 @@ export function initWorkspaces() {
   if (!root || !document.getElementById('home')) return;
 
   upgradeNavToButtons();
+  addWorkspaceHeadings();
   current = fromHash();
   show(current, { animate: false });
   window.addEventListener('hashchange', () => {

@@ -68,7 +68,7 @@ html[data-ws="blog"] .ws-btn[data-ws="blog"] {
   background: var(--accent); color: var(--on-accent); font-weight: 700;
 }
 .bar-path { white-space: nowrap; }
-.bar-path .p { display: none; }
+.bar-path .p { display: none; margin-left: 1ch; }
 html:not(.js) .bar-path .p[data-p="home"],
 html[data-ws="home"] .bar-path .p[data-p="home"],
 html[data-ws="projects"] .bar-path .p[data-p="projects"],
@@ -157,8 +157,9 @@ html.js[data-ws="blog"] #blog { display: flex; }
 .edu { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; }
 .edu .honor { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
 
-.contact-list { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; font-family: var(--font-mono); font-size: 15px; }
+.contact-list { display: grid; grid-template-columns: max-content 1fr; align-items: center; gap: 0 18px; font-family: var(--font-mono); font-size: 15px; }
 .contact-list dt { color: var(--text-muted); }
+.contact-list dd { margin: 0; }
 .contact-list a { display: inline-flex; align-items: center; min-height: 44px; overflow-wrap: anywhere; }
 
 /* ---------- cards ---------- */
