@@ -1,0 +1,20 @@
+---
+import type { Post } from '../lib/blog';
+interface Props { posts: Post[]; }
+const { posts } = Astro.props;
+---
+{posts.length > 0 ? (
+  <div class="posts">
+    {posts.map((p) => (
+      <a class="post-row" href={p.url}>
+        <span class="post-date">{p.date}</span>
+        <span>
+          <span class="post-title">{p.title}</span>
+          {p.blurb && <span class="post-blurb">{p.blurb}</span>}
+        </span>
+      </a>
+    ))}
+  </div>
+) : (
+  <p class="muted">No posts found. <a href="/blog/">Open the blog ↗</a></p>
+)}

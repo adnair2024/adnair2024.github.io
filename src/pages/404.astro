@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+import Window from '../components/Window.astro';
+---
+<Base standalone title="404 · Ashwin Nair">
+  <div class="lost workspaces">
+    <Window title="kitty — ~" labelledby="lost-h" focused>
+      <h1 class="cmd" id="lost-h"><span class="ps" aria-hidden="true">$ </span>cd: no such file or directory</h1>
+      <p class="hero-copy">That path doesn't exist here.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/">cd ~</a>
+        <a class="btn" href="/blog/">cd ~/blog</a>
+      </div>
+    </Window>
+  </div>
+</Base>

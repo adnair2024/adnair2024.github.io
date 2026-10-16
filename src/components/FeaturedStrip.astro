@@ -1,0 +1,19 @@
+---
+interface Props { items: { name: string; description: string }[]; }
+const { items } = Astro.props;
+---
+<section class="win feat" aria-labelledby="feat-h">
+  <p class="win-title" aria-hidden="true">kitty — ~/projects</p>
+  <div class="cmd-row">
+    <h2 class="cmd" id="feat-h"><span class="ps" aria-hidden="true">$ </span>ls ~/projects | head -2</h2>
+    <a class="btn" href="#projects">all projects →</a>
+  </div>
+  <div class="cards">
+    {items.map((i) => (
+      <a class="feat-card" href="#projects">
+        <span class="name">{i.name}</span>
+        <span class="desc">{i.description}</span>
+      </a>
+    ))}
+  </div>
+</section>

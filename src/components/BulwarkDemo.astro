@@ -1,0 +1,20 @@
+---
+// Slot for a real recording later: render a muted looping <video> (with poster
+// and a text alternative) in place of the sample below. See recordings/.
+---
+<section class="win win-demo" aria-labelledby="demo-h">
+  <p class="win-title" aria-hidden="true">kitty — bulwark demo</p>
+  <h2 class="sr-only" id="demo-h">bulwark demo</h2>
+  <div class="term-scroll" role="region" aria-label="Sample bulwark output" tabindex="0">
+<pre class="term"><span class="ps">$</span> sudo bulwark --plain
+<span class="dim">────────────────────────────────</span>
+<span class="pass">PASS</span>  SSH-01  root login disabled
+<span class="pass">PASS</span>  SSH-02  password auth off
+<span class="pass">PASS</span>  NET-01  firewall active
+<span class="warn">WARN</span>  KRN-02  ip forwarding on
+<span class="fail">FAIL</span>  LOG-02  no brute-force guard
+<span class="dim">────────────────────────────────</span>
+score 84  grade B</pre>
+  </div>
+  <p class="note demo-note">Sample output. Swap in a real recording later.</p>
+</section>

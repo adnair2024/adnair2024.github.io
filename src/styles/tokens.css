@@ -1,0 +1,25 @@
+:root {
+  --bg: #0b0d12;
+  --win: #141821;
+  --win-inset: #11141c;
+  --input: #0f1218;
+  --border-idle: #222837;
+  --border-soft: #2a3142;
+  --text: #e6e8ee;
+  --text-body: #c9cfdb;
+  --text-muted: #9aa3b5;
+  --accent: #8ab4f8; /* alternates: #c3a6ff #f5b88a #8fdcb0 */
+  --on-accent: #0b0d12;
+  --ok: #8fdcb0;
+  --warn: #f0c674;
+  --err: #f4a29a;
+
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-sans: 'IBM Plex Sans', system-ui, 'Segoe UI', sans-serif;
+
+  --gap: 10px;
+  --radius-win: 12px;
+  --radius-card: 10px;
+  --radius-btn: 8px;
+  color-scheme: dark;
+}

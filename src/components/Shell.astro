@@ -1,0 +1,19 @@
+---
+import type { ShellData } from '../scripts/shell-core';
+interface Props { data: ShellData; }
+const { data } = Astro.props;
+const chips = ['help', 'neofetch', 'ls projects', 'cat about.txt'];
+---
+<section class="win shell" id="shell" aria-labelledby="shell-h" data-shell={JSON.stringify(data)}>
+  <p class="win-title" aria-hidden="true">kitty — ~/shell</p>
+  <h2 class="sr-only" id="shell-h">Interactive shell</h2>
+  <div class="shell-log" id="shell-log" role="log" aria-live="polite" tabindex="0"></div>
+  <div class="shell-chips" id="shell-chips">
+    {chips.map((c) => <button type="button" class="btn" data-cmd={c}>{c}</button>)}
+  </div>
+  <div class="shell-row">
+    <label for="shell-input"><span class="ps" aria-hidden="true">$</span><span class="sr-only">Shell command</span></label>
+    <input id="shell-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="try: help, neofetch, ls projects" />
+  </div>
+  <p class="shell-hint">Optional. Everything here is clickable too.</p>
+</section>
