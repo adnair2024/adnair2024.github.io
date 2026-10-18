@@ -12,7 +12,8 @@ Status: redesign is built on branch `redesign` (not merged). Items marked **bloc
 ## Content
 
 - [ ] Add `public/resume.pdf` (the `résumé.pdf` button appears automatically).
-- [ ] Real recordings for bulwark and termwerm (Charm VHS `.tape` files in `recordings/`). Replace the sample output in `src/components/BulwarkDemo.astro`. Include a text alternative.
+- [x] bulwark recording (public/recordings/, README GIF in recordings/bulwark-demo.gif)
+- [ ] termwerm recording (Charm VHS `.tape` in `recordings/`). Include a text alternative.
 - [ ] Odyssey screenshot or clip.
 - [ ] Expand the blamey README and tidy GitHub "About" text:
   - blamey says "contributer"

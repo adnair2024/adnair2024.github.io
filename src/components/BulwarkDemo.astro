@@ -1,20 +1,26 @@
 ---
-// Slot for a real recording later: render a muted looping <video> (with poster
-// and a text alternative) in place of the sample below. See recordings/.
+// Recording source: recordings/bulwark-demo.gif (README copy). Site copies live in public/recordings/.
 ---
 <section class="win win-demo" aria-labelledby="demo-h">
   <p class="win-title" aria-hidden="true">kitty — bulwark demo</p>
   <h2 class="sr-only" id="demo-h">bulwark demo</h2>
-  <div class="term-scroll" role="region" aria-label="Sample bulwark output" tabindex="0">
-<pre class="term"><span class="ps">$</span> sudo bulwark --plain
-<span class="dim">────────────────────────────────</span>
-<span class="pass">PASS</span>  SSH-01  root login disabled
-<span class="pass">PASS</span>  SSH-02  password auth off
-<span class="pass">PASS</span>  NET-01  firewall active
-<span class="warn">WARN</span>  KRN-02  ip forwarding on
-<span class="fail">FAIL</span>  LOG-02  no brute-force guard
-<span class="dim">────────────────────────────────</span>
-score 84  grade B</pre>
-  </div>
-  <p class="note demo-note">Sample output. Swap in a real recording later.</p>
+  <video
+    class="demo-video"
+    autoplay
+    loop
+    muted
+    playsinline
+    preload="metadata"
+    poster="/recordings/bulwark-demo-poster.jpg"
+    aria-describedby="demo-desc"
+  >
+    <source src="/recordings/bulwark-demo.webm" type="video/webm" />
+    <source src="/recordings/bulwark-demo.mp4" type="video/mp4" />
+  </video>
+  <p class="sr-only" id="demo-desc">
+    Recording of bulwark's terminal interface. A list of Linux hardening checks grouped by SSH, accounts,
+    files, network, kernel, updates and logging, each marked pass, warn or fail. Moving through the list shows
+    the detail and a suggested fix for each finding, plus an overall score and grade.
+  </p>
+  <p class="note demo-note">bulwark running on my own Arch machine, not as root, so some checks are skipped.</p>
 </section>

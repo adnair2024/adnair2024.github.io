@@ -271,3 +271,5 @@ html:not(.js) .shell { display: none; }
   .ws.enter-right, .ws.enter-left { animation: none; }
   .win { transition: none; }
 }
+
+.demo-video { display: block; width: 100%; height: auto; border: 1px solid var(--border-soft); border-radius: var(--radius-card); background: var(--win-inset); }
