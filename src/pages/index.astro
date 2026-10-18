@@ -11,7 +11,8 @@ import Shell from '../components/Shell.astro';
 import { site } from '../data/site';
 import { experience, findPlaceholders } from '../data/experience';
 import { odyssey } from '../data/projects';
-import { getRepos } from '../lib/github';
+import RecentRepos from '../components/RecentRepos.astro';
+import { getRepos, getRecentRepos } from '../lib/github';
 import { getPosts } from '../lib/blog';
 import { securityTxt } from '../lib/security';
 import type { ShellData } from '../scripts/shell-core';
@@ -26,6 +27,7 @@ if (placeholders.length > 0) {
 }
 
 const repos = await getRepos();
+const recent = await getRecentRepos();
 const posts = await getPosts(4);
 const hasResume = existsSync(join(process.cwd(), 'public', site.resumePath));
 
@@ -93,6 +95,7 @@ const shellData: ShellData = {
 
     <!-- workspace 2: projects -->
     <div class="ws" id="projects" data-ws="projects">
+      <div class="projects-col">
       <Window title="kitty — ~/projects" labelledby="projects-h" class="win-projects" primary>
         <div class="cmd-row">
           <h2 class="cmd" id="projects-h"><span class="ps" aria-hidden="true">$ </span>ls -l ~/projects</h2>
@@ -112,6 +115,16 @@ const shellData: ShellData = {
           ))}
         </div>
       </Window>
+      {recent.length > 0 && (
+        <Window title="kitty — ~/projects/recent" labelledby="recent-h">
+          <div class="cmd-row">
+            <h2 class="cmd" id="recent-h"><span class="ps" aria-hidden="true">$ </span>ls -t ~/projects | head -{recent.length}</h2>
+            <p class="note">recently pushed on github</p>
+          </div>
+          <RecentRepos repos={recent} />
+        </Window>
+      )}
+      </div>
       <div class="demo-col">
         <Demo
           name="bulwark"

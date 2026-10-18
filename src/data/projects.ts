@@ -1,6 +1,9 @@
 export const githubUser = 'adnair2024';
 export const featuredRepos = ['bulwark', 'termwerm', 'blamey']; // order matters
 
+// Repos never shown in the "recent" list (this site, the blog source, dotfiles).
+export const excludeRecent = ['adnair2024.github.io', 'blog-source', '.dotfiles'];
+
 // Optional per-repo overrides; fall back to GitHub data when absent.
 export const overrides: Record<string, { tagline?: string; stack?: string; featured?: string }> = {
   bulwark: {

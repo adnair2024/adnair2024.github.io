@@ -1,6 +1,6 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
-import { githubUser, featuredRepos, overrides } from '../data/projects';
+import { githubUser, featuredRepos, excludeRecent, overrides } from '../data/projects';
 
 export interface Repo {
   name: string;
@@ -95,4 +95,67 @@ export async function getRepos(): Promise<Repo[]> {
     console.warn(`[github] could not write cache: ${(err as Error).message}`);
   }
   return out;
+}
+
+export interface RecentRepo {
+  name: string;
+  description: string;
+  language: string;
+  url: string;
+  pushedAt: string;
+}
+
+interface ApiListRepo extends ApiRepo {
+  fork: boolean;
+}
+
+const RECENT_CACHE = join(process.cwd(), 'src/data/.cache/recent.json');
+
+// Most recently pushed public repos that are not already pinned. Never throws.
+export async function getRecentRepos(limit = 5): Promise<RecentRepo[]> {
+  let list: ApiListRepo[];
+  try {
+    const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
+    if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+    const res = await fetch(
+      `https://api.github.com/users/${githubUser}/repos?type=owner&sort=pushed&per_page=30`,
+      { headers },
+    );
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const raw = (await res.json()) as ApiListRepo[];
+    list = raw.map((j) => ({
+      name: j.name,
+      description: j.description,
+      language: j.language,
+      html_url: j.html_url,
+      pushed_at: j.pushed_at,
+      private: j.private,
+      archived: j.archived,
+      fork: j.fork,
+    }));
+    try {
+      await mkdir(dirname(RECENT_CACHE), { recursive: true });
+      await writeFile(RECENT_CACHE, JSON.stringify(list, null, 2) + '\n');
+    } catch (err) {
+      console.warn(`[github] could not write recent cache: ${(err as Error).message}`);
+    }
+  } catch (err) {
+    try {
+      list = JSON.parse(await readFile(RECENT_CACHE, 'utf8'));
+      console.warn(`[github] recent: ${(err as Error).message}, using cache`);
+    } catch {
+      console.warn(`[github] recent: ${(err as Error).message}, skipped`);
+      return [];
+    }
+  }
+  return list
+    .filter((r) => !r.private && !r.archived && !r.fork && !featuredRepos.includes(r.name) && !excludeRecent.includes(r.name))
+    .slice(0, limit)
+    .map((r) => ({
+      name: r.name,
+      description: r.description ?? '',
+      language: r.language ?? '',
+      url: r.html_url,
+      pushedAt: r.pushed_at.slice(0, 10),
+    }));
 }
