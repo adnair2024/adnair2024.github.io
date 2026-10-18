@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-18T02:37:07.487Z",
+  "controls": [
+    {
+      "kind": "header",
+      "id": "header:Content-Security-Policy",
+      "file": "public/_headers",
+      "lang": "js",
+      "header": "Content-Security-Policy"
+    },
+    {
+      "kind": "header",
+      "id": "header:Cross-Origin-Opener-Policy",
+      "file": "public/_headers",
+      "lang": "js",
+      "header": "Cross-Origin-Opener-Policy"
+    },
+    {
+      "kind": "header",
+      "id": "header:Cross-Origin-Resource-Policy",
+      "file": "public/_headers",
+      "lang": "js",
+      "header": "Cross-Origin-Resource-Policy"
+    },
+    {
+      "kind": "header",
+      "id": "header:Permissions-Policy",
+      "file": "public/_headers",
+      "lang": "js",
+      "header": "Permissions-Policy"
+    },
+    {
+      "kind": "header",
+      "id": "header:Referrer-Policy",
+      "file": "public/_headers",
+      "lang": "js",
+      "header": "Referrer-Policy"
+    },
+    {
+      "kind": "header",
+      "id": "header:Strict-Transport-Security",
+      "file": "public/_headers",
+      "lang": "js",
+      "header": "Strict-Transport-Security"
+    },
+    {
+      "kind": "header",
+      "id": "header:X-Content-Type-Options",
+      "file": "public/_headers",
+      "lang": "js",
+      "header": "X-Content-Type-Options"
+    }
+  ],
+  "unparsed": []
+}
