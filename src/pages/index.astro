@@ -1,0 +1,149 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import Base from '../layouts/Base.astro';
+import Window from '../components/Window.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import FeaturedStrip from '../components/FeaturedStrip.astro';
+import Demo from '../components/Demo.astro';
+import BlogList from '../components/BlogList.astro';
+import Shell from '../components/Shell.astro';
+import { site } from '../data/site';
+import { experience, findPlaceholders } from '../data/experience';
+import { odyssey } from '../data/projects';
+import { getRepos } from '../lib/github';
+import { getPosts } from '../lib/blog';
+import { securityTxt } from '../lib/security';
+import type { ShellData } from '../scripts/shell-core';
+
+const placeholders = findPlaceholders();
+if (placeholders.length > 0) {
+  const msg = `src/data/experience.ts still has ${placeholders.length} [PLACEHOLDER] value(s):\n  - ${placeholders.join('\n  - ')}`;
+  if (import.meta.env.PROD && !process.env.ALLOW_PLACEHOLDERS) {
+    throw new Error(`${msg}\nFill them in before a production build.`);
+  }
+  console.warn(`[experience] ${msg}`);
+}
+
+const repos = await getRepos();
+const posts = await getPosts(4);
+const hasResume = existsSync(join(process.cwd(), 'public', site.resumePath));
+
+const featuredItems = [
+  ...repos.slice(0, 1).map((r) => ({ name: r.name, description: r.featured })),
+  { name: odyssey.name, description: odyssey.featured },
+];
+
+const shellProjects = repos.map((r) => ({ name: r.name, url: r.url }));
+shellProjects.splice(Math.min(1, shellProjects.length), 0, { name: odyssey.name, url: odyssey.url });
+const shellData: ShellData = {
+  projects: shellProjects,
+  posts: posts.map((p) => ({ date: p.date, title: p.title })),
+  securityTxt: securityTxt().trimEnd(),
+};
+---
+<Base>
+  <div class="workspaces" id="workspaces">
+    <!-- workspace 1: home -->
+    <div class="ws" id="home" data-ws="home">
+      <Window title="kitty — ~/whoami" labelledby="name" class="win-whoami" primary focused>
+        <p class="prompt"><span aria-hidden="true">$ </span>whoami</p>
+        <h1 class="hero-name" id="name"><span class="name-real">{site.name}</span><span class="name-typed" aria-hidden="true"></span><span class="caret" aria-hidden="true">_</span></h1>
+        <p class="hero-copy">Sysadmin in healthcare IT, moving into security. I build small, fast Linux tools in Go: hardening auditors, code-analysis TUIs, and an RPG bot for Discord.</p>
+        <ul class="chips" aria-label="Interests and skills">
+          {['arch + hyprland', 'go', 'python', 'linux hardening', 'ehr systems'].map((c) => <li class="chip">{c}</li>)}
+        </ul>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">./projects</a>
+          <a class="btn" href={site.githubUrl} target="_blank" rel="noopener noreferrer">github ↗</a>
+          {hasResume && <a class="btn" href={site.resumePath}>résumé.pdf</a>}
+        </div>
+      </Window>
+
+      <div class="col">
+        <Window title="kitty — ~/experience.txt" labelledby="exp-h">
+          <h2 class="cmd" id="exp-h"><span class="ps" aria-hidden="true">$ </span>cat experience.txt</h2>
+          <div class="job-head">
+            <h3 class="job-title">{experience.role}</h3>
+          </div>
+          <p class="job-org">{experience.org}</p>
+          <ul class="bullets">
+            {experience.bullets.map((b) => <li>{b}</li>)}
+          </ul>
+          <hr class="divider" />
+          <div class="edu">
+            <p>{experience.education.degree}</p>
+            <p class="honor">{experience.education.honor}</p>
+          </div>
+        </Window>
+
+        <Window title="kitty — ~/contact.txt" labelledby="contact-h">
+          <h2 class="cmd" id="contact-h"><span class="ps" aria-hidden="true">$ </span>cat contact.txt</h2>
+          <dl class="contact-list">
+            <dt>email</dt>
+            <dd><a href={`mailto:${site.email}`}>{site.email}</a></dd>
+            <dt>github</dt>
+            <dd><a href={site.githubUrl} target="_blank" rel="noopener noreferrer">{site.github}</a></dd>
+          </dl>
+        </Window>
+      </div>
+
+      <FeaturedStrip items={featuredItems} />
+    </div>
+
+    <!-- workspace 2: projects -->
+    <div class="ws" id="projects" data-ws="projects">
+      <Window title="kitty — ~/projects" labelledby="projects-h" class="win-projects" primary>
+        <div class="cmd-row">
+          <h2 class="cmd" id="projects-h"><span class="ps" aria-hidden="true">$ </span>ls -l ~/projects</h2>
+          <p class="note">synced from github.com/{site.github}</p>
+        </div>
+        <div class="cards">
+          <ProjectCard
+            name={odyssey.name}
+            meta={odyssey.stack}
+            description={odyssey.description}
+            stat={odyssey.stat}
+            href={odyssey.url}
+            linkLabel={odyssey.linkLabel}
+          />
+          {repos.map((r) => (
+            <ProjectCard name={r.name} meta={r.language} description={r.tagline} href={r.url} linkLabel="repo" />
+          ))}
+        </div>
+      </Window>
+      <div class="demo-col">
+        <Demo
+          name="bulwark"
+          slug="bulwark"
+          description="Recording of bulwark's terminal interface. A list of Linux hardening checks grouped by SSH, accounts, files, network, kernel, updates and logging, each marked pass, warn or fail. Moving through the list shows the detail and a suggested fix for each finding, plus an overall score and grade."
+          note="bulwark running on my own Arch machine, not as root, so some checks are skipped."
+        />
+        <Demo
+          name="termwerm"
+          slug="termwerm"
+          description="Recording of termwerm's terminal interface scanning a TypeScript project. A table lists every function with its rating (efficient, moderate or not efficient), language and location. Selecting a row shows the reason, a tip and the code snippet beside it, and filters narrow the list by rating."
+          note="termwerm scanning one of my own TypeScript projects."
+        />
+      </div>
+    </div>
+
+    <!-- workspace 3: blog -->
+    <div class="ws" id="blog" data-ws="blog">
+      <Window title="kitty — ~/blog" labelledby="blog-h" class="win-blog" primary>
+        <div class="cmd-row">
+          <h2 class="cmd" id="blog-h"><span class="ps" aria-hidden="true">$ </span>ls -t ~/blog</h2>
+          <a href={site.blogPath}>all posts ↗</a>
+        </div>
+        <BlogList posts={posts} />
+      </Window>
+      <Window title="kitty — ~/blog/README" labelledby="readme-h" class="win-readme">
+        <h2 class="sr-only" id="readme-h">Blog README</h2>
+        <p class="readme-copy">Notes on Neovim, tooling and tinkering, written in Markdown and built with Hugo.</p>
+        <p class="readme-topics">topics: neovim · coding · tech · fun</p>
+      </Window>
+    </div>
+  </div>
+
+  <Shell data={shellData} />
+</Base>

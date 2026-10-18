@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="JetBrainsMono Nerd Font Mono, JetBrains Mono, monospace">
+  <rect width="1200" height="630" fill="#0b0d12"/>
+  <rect x="0" y="0" width="1200" height="44" fill="#141821"/>
+  <rect x="0" y="43" width="1200" height="1" fill="#222837"/>
+  <rect x="10" y="6" width="80" height="32" rx="6" fill="#8ab4f8"/>
+  <text x="26" y="27" font-size="15" font-weight="700" fill="#0b0d12">1 home</text>
+  <text x="110" y="27" font-size="15" fill="#9aa3b5">2 projects</text>
+  <text x="222" y="27" font-size="15" fill="#9aa3b5">3 blog</text>
+  <text x="470" y="27" font-size="15" fill="#9aa3b5">ashwin@arch <tspan fill="#8ab4f8">~</tspan></text>
+  <text x="900" y="27" font-size="15" fill="#9aa3b5">go · linux · security</text>
+
+  <rect x="11" y="55" width="700" height="360" rx="12" fill="#141821" stroke="#8ab4f8" stroke-width="2"/>
+  <text x="36" y="88" font-size="14" fill="#9aa3b5">kitty — ~/whoami</text>
+  <text x="36" y="132" font-size="18" font-weight="500" fill="#8ab4f8">$ whoami</text>
+  <text x="36" y="206" font-size="68" font-weight="800" fill="#e6e8ee" letter-spacing="-2">Ashwin Nair<tspan fill="#8ab4f8">_</tspan></text>
+  <text x="36" y="262" font-size="22" fill="#c9cfdb" font-family="IBM Plex Sans, sans-serif">Sysadmin in healthcare IT, moving into security.</text>
+  <text x="36" y="294" font-size="22" fill="#c9cfdb" font-family="IBM Plex Sans, sans-serif">Small, fast Linux tools in Go.</text>
+  <g font-size="14" fill="#9aa3b5">
+    <rect x="36" y="330" width="150" height="30" rx="6" fill="none" stroke="#2a3142"/><text x="50" y="350">arch + hyprland</text>
+    <rect x="196" y="330" width="46" height="30" rx="6" fill="none" stroke="#2a3142"/><text x="208" y="350">go</text>
+    <rect x="252" y="330" width="80" height="30" rx="6" fill="none" stroke="#2a3142"/><text x="264" y="350">python</text>
+    <rect x="342" y="330" width="150" height="30" rx="6" fill="none" stroke="#2a3142"/><text x="356" y="350">linux hardening</text>
+  </g>
+
+  <rect x="721" y="55" width="468" height="360" rx="12" fill="#141821" stroke="#222837" stroke-width="2"/>
+  <text x="746" y="88" font-size="14" fill="#9aa3b5">kitty — bulwark demo</text>
+  <g font-size="16" fill="#c9cfdb">
+    <text x="746" y="130" fill="#8ab4f8">$ <tspan fill="#c9cfdb">sudo bulwark --plain</tspan></text>
+    <text x="746" y="166"><tspan fill="#8fdcb0">PASS</tspan>  SSH-01  root login disabled</text>
+    <text x="746" y="196"><tspan fill="#8fdcb0">PASS</tspan>  NET-01  firewall active</text>
+    <text x="746" y="226"><tspan fill="#f0c674">WARN</tspan>  KRN-02  ip forwarding on</text>
+    <text x="746" y="256"><tspan fill="#f4a29a">FAIL</tspan>  LOG-02  no brute-force guard</text>
+    <text x="746" y="300">score 84  grade B</text>
+  </g>
+
+  <rect x="11" y="425" width="1178" height="190" rx="12" fill="#141821" stroke="#222837" stroke-width="2"/>
+  <text x="36" y="458" font-size="14" fill="#9aa3b5">kitty — ~/projects</text>
+  <text x="36" y="494" font-size="18" font-weight="500" fill="#8ab4f8">$ ls ~/projects | head -2</text>
+  <rect x="36" y="514" width="560" height="80" rx="10" fill="#11141c" stroke="#2a3142"/>
+  <text x="54" y="545" font-size="22" font-weight="700" fill="#e6e8ee">bulwark</text>
+  <text x="54" y="574" font-size="15" fill="#9aa3b5">Linux hardening auditor in Go</text>
+  <rect x="616" y="514" width="560" height="80" rx="10" fill="#11141c" stroke="#2a3142"/>
+  <text x="634" y="545" font-size="22" font-weight="700" fill="#e6e8ee">odyssey</text>
+  <text x="634" y="574" font-size="15" fill="#9aa3b5">An RPG that lives in Discord</text>
+</svg>

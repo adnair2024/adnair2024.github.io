@@ -1,0 +1,25 @@
+---
+interface Props { standalone?: boolean; }
+const { standalone = false } = Astro.props;
+const base = standalone ? '/' : '';
+const items = [
+  { n: 1, id: 'home' },
+  { n: 2, id: 'projects' },
+  { n: 3, id: 'blog' },
+];
+---
+<header class="topbar">
+  <nav aria-label="Workspaces" class="ws-nav" id="ws-nav">
+    {items.map((i) => (
+      <a class="ws-btn" href={`${base}#${i.id}`} data-ws={i.id}>{i.n} {i.id}</a>
+    ))}
+  </nav>
+  <p class="bar-path">
+    ashwin@arch
+    <span class="p" data-p="home">~</span><span class="p" data-p="projects">~/projects</span><span class="p" data-p="blog">~/blog</span>
+  </p>
+  <div class="bar-right">
+    <span>go · linux · security</span>
+    <time class="clock" id="clock">--:--</time>
+  </div>
+</header>

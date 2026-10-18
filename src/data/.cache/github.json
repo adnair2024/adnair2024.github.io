@@ -1,0 +1,32 @@
+{
+  "bulwark": {
+    "name": "bulwark",
+    "description": "Read-only Linux hardening auditor with a TUI: CIS-inspired checks, a score, and a fix for every finding.",
+    "language": "Go",
+    "html_url": "https://github.com/adnair2024/bulwark",
+    "pushed_at": "2026-10-18T02:12:17Z",
+    "topics": [],
+    "private": false,
+    "archived": false
+  },
+  "termwerm": {
+    "name": "termwerm",
+    "description": "Terminal UI that rates function complexity across 10 languages, without a compiler.",
+    "language": "Go",
+    "html_url": "https://github.com/adnair2024/termwerm",
+    "pushed_at": "2026-10-18T02:12:19Z",
+    "topics": [],
+    "private": false,
+    "archived": false
+  },
+  "blamey": {
+    "name": "blamey",
+    "description": "See who wrote the code that exists today",
+    "language": "Go",
+    "html_url": "https://github.com/adnair2024/blamey",
+    "pushed_at": "2026-10-18T02:21:12Z",
+    "topics": [],
+    "private": false,
+    "archived": false
+  }
+}
