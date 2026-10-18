@@ -1,0 +1,16 @@
+---
+import type { RecentRepo } from '../lib/github';
+interface Props { repos: RecentRepo[]; }
+const { repos } = Astro.props;
+---
+<div class="posts">
+  {repos.map((r) => (
+    <a class="post-row" href={r.url} target="_blank" rel="noopener noreferrer">
+      <span class="post-date">{r.pushedAt}</span>
+      <span>
+        <span class="post-title">{r.name}{r.language && <span class="recent-lang"> · {r.language}</span>}</span>
+        {r.description && <span class="post-blurb">{r.description}</span>}
+      </span>
+    </a>
+  ))}
+</div>

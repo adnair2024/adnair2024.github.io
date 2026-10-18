@@ -1,0 +1,302 @@
+[
+  {
+    "name": "pawl",
+    "description": "pawl stops Claude Code from quietly weakening your app’s security. It snapshots the controls you already have (Next.js route auth, Supabase row-level security, CORS, security headers) and blocks any commit that removes or loosens one unless you accept the change with a reason. Deterministic, local, no LLM calls. Built for vibe coders.",
+    "language": "TypeScript",
+    "html_url": "https://github.com/adnair2024/pawl",
+    "pushed_at": "2026-10-18T17:42:11Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "adnair2024.github.io",
+    "description": "Source Repository for my Website",
+    "language": "HTML",
+    "html_url": "https://github.com/adnair2024/adnair2024.github.io",
+    "pushed_at": "2026-10-18T02:37:39Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "blog-source",
+    "description": "source for my blog",
+    "language": "HTML",
+    "html_url": "https://github.com/adnair2024/blog-source",
+    "pushed_at": "2026-10-18T02:33:26Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "blamey",
+    "description": "See who wrote the code that exists today",
+    "language": "Go",
+    "html_url": "https://github.com/adnair2024/blamey",
+    "pushed_at": "2026-10-18T02:21:12Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "termwerm",
+    "description": "Terminal UI that rates function complexity across 10 languages, without a compiler.",
+    "language": "Go",
+    "html_url": "https://github.com/adnair2024/termwerm",
+    "pushed_at": "2026-10-18T02:12:19Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "bulwark",
+    "description": "Read-only Linux hardening auditor with a TUI: CIS-inspired checks, a score, and a fix for every finding.",
+    "language": "Go",
+    "html_url": "https://github.com/adnair2024/bulwark",
+    "pushed_at": "2026-10-18T02:12:17Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "temp.nvim",
+    "description": "A zero-dependency Neovim plugin that instantly injects custom templates and frontmatter into your buffers with an interactive prompt.",
+    "language": "Lua",
+    "html_url": "https://github.com/adnair2024/temp.nvim",
+    "pushed_at": "2026-09-27T00:05:56Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "psychotop",
+    "description": "A kernel-level integrity monitor for Linux (Ubuntu 24.04). Built with Go and eBPF, it visualizes statistical system entropy via Hilbert Curves in the Kitty terminal. Designed for real-time forensic auditing and process integrity verification.",
+    "language": "Go",
+    "html_url": "https://github.com/adnair2024/psychotop",
+    "pushed_at": "2026-04-19T23:20:16Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "md2pdf",
+    "description": "Quickly turn .md files to .pdf, or edit on site.",
+    "language": "CSS",
+    "html_url": "https://github.com/adnair2024/md2pdf",
+    "pushed_at": "2026-04-12T13:31:29Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "shinypatcher",
+    "description": "Flask + Python shiny patcher for GBA and NDS Games (Pokemon)",
+    "language": "Python",
+    "html_url": "https://github.com/adnair2024/shinypatcher",
+    "pushed_at": "2026-04-08T13:40:54Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "modo",
+    "description": "The Best ToDo App - Time Management for Professionals",
+    "language": "HTML",
+    "html_url": "https://github.com/adnair2024/modo",
+    "pushed_at": "2026-03-19T23:01:16Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "alloy",
+    "description": null,
+    "language": null,
+    "html_url": "https://github.com/adnair2024/alloy",
+    "pushed_at": "2026-02-25T00:36:14Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "scripts",
+    "description": "Scripts I think are useful",
+    "language": "Shell",
+    "html_url": "https://github.com/adnair2024/scripts",
+    "pushed_at": "2026-02-09T01:30:01Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "ASCII-Red",
+    "description": "Pokemon in your terminal; what more could you want?",
+    "language": null,
+    "html_url": "https://github.com/adnair2024/ASCII-Red",
+    "pushed_at": "2026-02-03T00:39:26Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": ".dotfiles",
+    "description": "Neovim config",
+    "language": "Lua",
+    "html_url": "https://github.com/adnair2024/.dotfiles",
+    "pushed_at": "2026-01-26T23:23:08Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "codesnap",
+    "description": "best snippet organizer",
+    "language": "HTML",
+    "html_url": "https://github.com/adnair2024/codesnap",
+    "pushed_at": "2026-01-04T00:22:00Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "md-helper.nvim",
+    "description": "Markdown Utility Plugin for Neovim",
+    "language": "Lua",
+    "html_url": "https://github.com/adnair2024/md-helper.nvim",
+    "pushed_at": "2025-12-29T16:59:30Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "mm",
+    "description": "MyMarkdown",
+    "language": "Lua",
+    "html_url": "https://github.com/adnair2024/mm",
+    "pushed_at": "2025-12-22T20:08:05Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "igcc",
+    "description": "instagram-checker-and-claimer",
+    "language": "Python",
+    "html_url": "https://github.com/adnair2024/igcc",
+    "pushed_at": "2025-12-21T15:55:23Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "bdb",
+    "description": "Browser DB Viewer",
+    "language": "HTML",
+    "html_url": "https://github.com/adnair2024/bdb",
+    "pushed_at": "2025-12-08T18:32:35Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "terminal-database-scanner",
+    "description": "A curses-based terminal tool for quickly browsing SQLite (and other) databases directly from your project directories. Designed for developers, this tool integrates seamlessly with Neovim via a WhichKey keybind, allowing you to select and explore .db files in the directory of your current file without leaving the terminal.",
+    "language": "Python",
+    "html_url": "https://github.com/adnair2024/terminal-database-scanner",
+    "pushed_at": "2025-12-03T00:09:48Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "c-learning",
+    "description": "A repository for me to experiment with c-lang3",
+    "language": "C",
+    "html_url": "https://github.com/adnair2024/c-learning",
+    "pushed_at": "2025-12-01T01:08:42Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "bct",
+    "description": "Better Content Tracker",
+    "language": null,
+    "html_url": "https://github.com/adnair2024/bct",
+    "pushed_at": "2025-11-16T00:30:08Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "disfetch",
+    "description": "Simple system monitoring dashboard - Made with Python and Curses",
+    "language": null,
+    "html_url": "https://github.com/adnair2024/disfetch",
+    "pushed_at": "2025-10-01T16:42:42Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "gitdash",
+    "description": "A terminal-based Git dashboard built with Python and curses. View staged/unstaged/untracked files, recent commits, and branch info in one place. Includes popups for diffs and commit messages, with simple keybindings for add, unstage, commit, and more.",
+    "language": null,
+    "html_url": "https://github.com/adnair2024/gitdash",
+    "pushed_at": "2025-09-13T01:06:39Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "termplanner",
+    "description": "A simple terminal based daily planner built with python and curses - no external libraries required",
+    "language": "Python",
+    "html_url": "https://github.com/adnair2024/termplanner",
+    "pushed_at": "2025-09-07T01:32:56Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "termcards",
+    "description": "Terminal-based flashcard tool in Python. Study with shuffled cards, track mastered vs. remaining, and view session summaries with time spent. Progress saves automatically in progress.json for continuous learning.",
+    "language": "Python",
+    "html_url": "https://github.com/adnair2024/termcards",
+    "pushed_at": "2025-09-03T18:11:52Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "trackerbot",
+    "description": "Simple discord bot to track user's anime and manga reads",
+    "language": "Python",
+    "html_url": "https://github.com/adnair2024/trackerbot",
+    "pushed_at": "2025-08-22T09:57:42Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "mangaken",
+    "description": "A simple website using flask to help users store information about Manga they are currently reading.",
+    "language": null,
+    "html_url": "https://github.com/adnair2024/mangaken",
+    "pushed_at": "2025-05-09T23:07:19Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "articles",
+    "description": null,
+    "language": null,
+    "html_url": "https://github.com/adnair2024/articles",
+    "pushed_at": "2025-04-27T15:23:28Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  }
+]
