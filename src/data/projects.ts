@@ -4,7 +4,11 @@ export const featuredRepos = ['bulwark', 'termwerm', 'blamey']; // order matters
 // Optional per-repo overrides; fall back to GitHub data when absent.
 export const overrides: Record<string, { tagline?: string; stack?: string; featured?: string }> = {
   bulwark: {
+    tagline: 'Read-only Linux hardening auditor with a TUI: CIS-inspired checks, a score, and a fix for every finding.',
     featured: 'Linux hardening auditor: 27 CIS-inspired checks, a score, and a fix for every finding.',
+  },
+  termwerm: {
+    tagline: 'Terminal UI that rates function complexity across 10 languages, without a compiler.',
   },
 };
 

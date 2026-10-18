@@ -11,7 +11,7 @@ Status: redesign is built on branch `redesign` (not merged). Items marked **bloc
 
 ## Content
 
-- [ ] Add `public/resume.pdf` (the `résumé.pdf` button appears automatically).
+- [ ] Add `public/resume.pdf` once it matches the site (old draft: ~/resume-old.pdf has phone, city, employer name, and an outdated role/graduation line). The button appears automatically.
 - [x] bulwark recording (public/recordings/, README GIF in recordings/bulwark-demo.gif)
 - [x] termwerm recording (public/recordings/, README GIF in recordings/termwerm-demo.gif)
 - [ ] Odyssey screenshot or clip.
