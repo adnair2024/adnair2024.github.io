@@ -5,8 +5,8 @@ export const experience = {
   org: 'Neuroscience clinic · HIPAA-regulated healthcare',
   bullets: [
     "Administer the clinic's athenaPractice EHR (formerly GE Centricity): upgrades, UI, user access, and form management in MEL.",
-    'Support around 100 employees across two facilities in one state.',
-    'Automated ultrasound and fluoroscopy backups.',
+    'Support a team of employees across two facilities in one state.',
+    'Automated ultrasound backups.',
     'Built and revised forms for clinical and office users.',
   ],
 
