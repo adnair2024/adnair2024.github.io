@@ -5,7 +5,7 @@ import Base from '../layouts/Base.astro';
 import Window from '../components/Window.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import FeaturedStrip from '../components/FeaturedStrip.astro';
-import BulwarkDemo from '../components/BulwarkDemo.astro';
+import Demo from '../components/Demo.astro';
 import BlogList from '../components/BlogList.astro';
 import Shell from '../components/Shell.astro';
 import { site } from '../data/site';
@@ -112,7 +112,20 @@ const shellData: ShellData = {
           ))}
         </div>
       </Window>
-      <BulwarkDemo />
+      <div class="demo-col">
+        <Demo
+          name="bulwark"
+          slug="bulwark"
+          description="Recording of bulwark's terminal interface. A list of Linux hardening checks grouped by SSH, accounts, files, network, kernel, updates and logging, each marked pass, warn or fail. Moving through the list shows the detail and a suggested fix for each finding, plus an overall score and grade."
+          note="bulwark running on my own Arch machine, not as root, so some checks are skipped."
+        />
+        <Demo
+          name="termwerm"
+          slug="termwerm"
+          description="Recording of termwerm's terminal interface scanning a TypeScript project. A table lists every function with its rating (efficient, moderate or not efficient), language and location. Selecting a row shows the reason, a tip and the code snippet beside it, and filters narrow the list by rating."
+          note="termwerm scanning one of my own TypeScript projects."
+        />
+      </div>
     </div>
 
     <!-- workspace 3: blog -->

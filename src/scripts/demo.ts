@@ -1,7 +1,8 @@
 export function initDemo(): void {
-  const video = document.querySelector<HTMLVideoElement>('.demo-video');
-  if (!video || !matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  video.autoplay = false;
-  video.pause();
-  video.controls = true;
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll<HTMLVideoElement>('.demo-video').forEach((video) => {
+    video.autoplay = false;
+    video.pause();
+    video.controls = true;
+  });
 }
