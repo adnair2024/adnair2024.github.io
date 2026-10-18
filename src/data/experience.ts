@@ -2,15 +2,14 @@
 // Never invent details here.
 export const experience = {
   role: 'Systems Administrator',
-  start: '[START]',
-  end: 'now',
   org: 'Neuroscience clinic · HIPAA-regulated healthcare',
   bullets: [
-    "Administer the clinic's athenaPractice EHR (formerly GE Centricity). [WHAT HE OWNS: upgrades, interfaces, user access]",
-    "Work alongside the clinic's managed service provider. [WHERE HIS JOB ENDS AND THEIRS BEGINS]",
-    '[SCALE: users, endpoints, sites supported]',
-    '[ONE THING HE AUTOMATED, FIXED OR HARDENED, with a number]',
+    "Administer the clinic's athenaPractice EHR (formerly GE Centricity): upgrades, UI, user access, and form management in MEL.",
+    'Support around 100 employees across two facilities in one state.',
+    'Automated ultrasound and fluoroscopy backups.',
+    'Built and revised forms for clinical and office users.',
   ],
+
   education: {
     degree: 'B.S. Computer Information Systems, Loyola University New Orleans',
     honor: 'cum laude',
@@ -20,6 +19,6 @@ export const experience = {
 const PLACEHOLDER = /\[[A-Z][A-Z :,.\-a-z]*\]/;
 
 export function findPlaceholders(): string[] {
-  const all = [experience.start, experience.org, ...experience.bullets];
+  const all = [experience.org, ...experience.bullets];
   return all.filter((s) => PLACEHOLDER.test(s));
 }

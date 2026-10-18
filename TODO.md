@@ -4,13 +4,7 @@ Status: redesign is built on branch `redesign` (not merged). Items marked **bloc
 
 ## Before merging to `main`
 
-- [ ] **Experience details** (blocks merge: the production build fails while placeholders remain). Edit `src/data/experience.ts`:
-  - start date
-  - what you own in the athenaPractice EHR (upgrades, interfaces, user access)
-  - where your job ends and the MSP's begins
-  - scale (users, endpoints, sites)
-  - one thing you automated, fixed or hardened, with a number
-  - Keep the employer and MSP unnamed.
+- [x] Experience details filled in (start date and MSP line intentionally cut).
 - [ ] **Switch GitHub Pages source** (blocks merge): repo Settings → Pages → Source → "GitHub Actions". Do it at merge time, not before.
 - [ ] Open the PR from `redesign` and paste the checklist results (see CLAUDE.md §11).
 - [ ] After the first deploy, confirm `/blog/` still works, then push a blog post and confirm the site rebuilds on its own.
