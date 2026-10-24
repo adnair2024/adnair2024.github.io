@@ -79,7 +79,7 @@ html:not(.js) .clock { display: none; }
 
 /* ---------- desk and windows ---------- */
 
-.desk { display: flex; flex-wrap: wrap; gap: var(--gap); padding: var(--gap); align-items: flex-start; }
+.desk { display: flex; flex-wrap: wrap; gap: var(--gap); padding: var(--gap); align-items: stretch; }
 .workspaces { flex: 999 1 640px; min-width: 0; display: flex; flex-direction: column; gap: var(--gap); }
 .ws { display: flex; flex-wrap: wrap; gap: var(--gap); align-items: stretch; scroll-margin-top: var(--gap); }
 
@@ -226,12 +226,10 @@ html.js[data-ws="blog"] #blog { display: flex; }
 
 .shell {
   flex: 1 1 360px; min-height: 420px; display: flex; flex-direction: column;
-  position: sticky; top: var(--gap); align-self: flex-start;
-  height: min(680px, calc(100dvh - 76px));
 }
 html:not(.js) .shell { display: none; }
 .shell-log {
-  flex: 1 1 auto; min-height: 0; overflow-y: auto; overflow-wrap: anywhere;
+  flex: 1 1 0; min-height: 220px; overflow-y: auto; overflow-wrap: anywhere;
   font-family: var(--font-mono); font-size: 14px; line-height: 1.5; white-space: pre-wrap;
   color: var(--text-body);
 }
@@ -263,7 +261,7 @@ html:not(.js) .shell { display: none; }
 @media (max-width: 560px) {
   .win { padding: 16px 16px 20px; }
   .post-row { grid-template-columns: 1fr; }
-  .shell { position: static; height: auto; min-height: 420px; }
+  .shell { min-height: 420px; }
   .shell-log { min-height: 220px; max-height: 50vh; }
   .hero-copy { font-size: 17px; }
 }
