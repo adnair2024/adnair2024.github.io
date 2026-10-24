@@ -38,7 +38,7 @@ Status: redesign is built on branch `redesign` (not merged). Items marked **bloc
 
 ## Cleanup and checks
 
-- [ ] Delete `legacy/` once you're sure you don't need the old site.
+- [x] Deleted `legacy/` (old site stays in git history).
 - [ ] Run Lighthouse and axe again on the deployed site (mobile and desktop). Local results were 98–100.
 - [ ] Check the site on a real phone and with a real screen reader.
 - [ ] The CI workflow has never run. Watch the first run.
