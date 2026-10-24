@@ -272,7 +272,7 @@ commands:
   ls blog           list blog posts
   cat <file>        about.txt, experience.txt, security.txt
   cd <dir>          ~, projects, blog
-  open <project>    bulwark, termwerm, blamey, odyssey
+  open <project>    bulwark, termwerm, term-manga, blamey, odyssey
   neofetch          system info
   clear             clear the screen
 ```
