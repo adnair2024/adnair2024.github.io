@@ -1,10 +1,10 @@
 [
   {
-    "name": "pawl",
-    "description": "pawl stops Claude Code from quietly weakening your app’s security. It snapshots the controls you already have (Next.js route auth, Supabase row-level security, CORS, security headers) and blocks any commit that removes or loosens one unless you accept the change with a reason. Deterministic, local, no LLM calls. Built for vibe coders.",
-    "language": "TypeScript",
-    "html_url": "https://github.com/adnair2024/pawl",
-    "pushed_at": "2026-10-18T17:42:11Z",
+    "name": "term-manga",
+    "description": "Easy way to install manga and send to a Kindle device",
+    "language": "Go",
+    "html_url": "https://github.com/adnair2024/term-manga",
+    "pushed_at": "2026-10-24T15:53:31Z",
     "private": false,
     "archived": false,
     "fork": false
@@ -14,7 +14,17 @@
     "description": "Source Repository for my Website",
     "language": "HTML",
     "html_url": "https://github.com/adnair2024/adnair2024.github.io",
-    "pushed_at": "2026-10-18T02:37:39Z",
+    "pushed_at": "2026-10-24T15:48:43Z",
+    "private": false,
+    "archived": false,
+    "fork": false
+  },
+  {
+    "name": "pawl",
+    "description": "pawl stops Claude Code from quietly weakening your app’s security. It snapshots the controls you already have (Next.js route auth, Supabase row-level security, CORS, security headers) and blocks any commit that removes or loosens one unless you accept the change with a reason. Deterministic, local, no LLM calls. Built for vibe coders.",
+    "language": "TypeScript",
+    "html_url": "https://github.com/adnair2024/pawl",
+    "pushed_at": "2026-10-18T17:42:11Z",
     "private": false,
     "archived": false,
     "fork": false
@@ -285,16 +295,6 @@
     "language": null,
     "html_url": "https://github.com/adnair2024/mangaken",
     "pushed_at": "2025-05-09T23:07:19Z",
-    "private": false,
-    "archived": false,
-    "fork": false
-  },
-  {
-    "name": "articles",
-    "description": null,
-    "language": null,
-    "html_url": "https://github.com/adnair2024/articles",
-    "pushed_at": "2025-04-27T15:23:28Z",
     "private": false,
     "archived": false,
     "fork": false

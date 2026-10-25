@@ -28,5 +28,15 @@
     "topics": [],
     "private": false,
     "archived": false
+  },
+  "term-manga": {
+    "name": "term-manga",
+    "description": "Easy way to install manga and send to a Kindle device",
+    "language": "Go",
+    "html_url": "https://github.com/adnair2024/term-manga",
+    "pushed_at": "2026-10-24T15:53:31Z",
+    "topics": [],
+    "private": false,
+    "archived": false
   }
 }

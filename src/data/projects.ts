@@ -1,5 +1,8 @@
 export const githubUser = 'adnair2024';
-export const featuredRepos = ['bulwark', 'termwerm', 'blamey']; // order matters
+export const featuredRepos = ['bulwark', 'termwerm', 'term-manga', 'blamey']; // order matters
+
+// Repos never shown in the "recent" list (this site, the blog source, dotfiles).
+export const excludeRecent = ['adnair2024.github.io', 'blog-source', '.dotfiles'];
 
 // Repos never shown in the "recent" list (this site, the blog source, dotfiles).
 export const excludeRecent = ['adnair2024.github.io', 'blog-source', '.dotfiles'];
@@ -12,6 +15,9 @@ export const overrides: Record<string, { tagline?: string; stack?: string; featu
   },
   termwerm: {
     tagline: 'Terminal UI that rates function complexity across 10 languages, without a compiler.',
+  },
+  'term-manga': {
+    tagline: 'Terminal UI that searches MangaDex and Mangapill, downloads chapters and sends them to a Kindle via KCC and Calibre.',
   },
 };
 

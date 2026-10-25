@@ -29,7 +29,7 @@ describe('commands', () => {
   });
 
   it('help is exact', () => {
-    expect(out('help')).toContain('  open <project>    bulwark, termwerm, blamey, odyssey');
+    expect(out('help')).toContain('  open <project>    bulwark, termwerm, term-manga, blamey, odyssey');
     expect(out('help').startsWith('commands:\n')).toBe(true);
   });
 
